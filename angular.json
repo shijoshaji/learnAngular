@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "appAPM"
+    }
+  },
+  "defaultProject": "appAPM",
+  "cli": {
+    "analytics": "0922a5f5-2576-48df-8f21-6ad8b8569bcb"
+  }
 }
