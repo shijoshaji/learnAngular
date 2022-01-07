@@ -10,6 +10,7 @@ import { RatingStarsComponent } from './components/rating-stars/rating-stars.com
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
 import { HomeComponent } from './components/home/home.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -25,7 +26,14 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'products', component: ProductsComponent },
+      { path: 'products/:id', component: ProductDetailComponent },
+      { path: 'welcome', component: HomeComponent },
+      { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+      // { path: '**', component: PageNotFound }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]

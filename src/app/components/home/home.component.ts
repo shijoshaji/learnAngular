@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Version } from '@angular/compiler';
+import { Component, OnInit, VERSION } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  pageTitle: string = 'Welcome to my First SPA using Angular' + VERSION.full
 
   constructor() { }
 

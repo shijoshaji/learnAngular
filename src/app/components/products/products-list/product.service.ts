@@ -15,9 +15,12 @@ export class ProductService {
 
   getProduct(): Observable<IProduct[]> {
 
+
     return this.httpClient.get<IProduct[]>(this.productURL).pipe(
       // tap to emit data
-      tap(data => console.log('Data:', JSON.stringify(data))),
+      // tap(data => console.log('Data:', JSON.stringify(data))),
+      tap(s => console.log('Triggered products API')),
+
       catchError(this.handleError)
     );
 

@@ -64,6 +64,7 @@ export class ProductsListComponent implements OnInit, OnDestroy {
       error: err => this.errMsg = err
     });
 
+    console.log('Calling getproduct');
 
 
   }

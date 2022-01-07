@@ -34,11 +34,12 @@
                     <!-- This tr is for product from -->
                     <tr *ngFor="let item of filteredProducts">
                         <!-- Notes: [src]=""/ src={{}} possible where [] is property binding -->
-                        <td><img *ngIf="showImage" src={{item.image}} alt="" srcset="" [style.width.px]="imageWidth"
+                        <td>
+                            <img *ngIf="showImage" src={{item.image}} alt="" srcset="" [style.width.px]="imageWidth"
                                 [title]="item.title">
                         </td>
-                        <td>{{item.title | uppercase}}</td>
-                        <td>{{item.category | convertToSpace:'-' }} </td>
+                        <td> <a [routerLink]="['/products',item.id]">{{item.title | uppercase}}</a></td>
+                        <td>{{item.category | titlecase | convertToSpace:'-' }} </td>
                         <!-- <td>{{item.description}}</td> -->
                         <td>{{item.price | currency:'EUR' }}</td>
                         <td>
