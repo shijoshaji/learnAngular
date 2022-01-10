@@ -9,6 +9,7 @@ import { ConvertToSpacePipe } from './utils/convert-to-space.pipe';
 import { RatingStarsComponent } from './components/rating-stars/rating-stars.component'
 import { HttpClientModule } from '@angular/common/http';
 import { ProductDetailComponent } from './components/products/product-detail/product-detail.component';
+import { ProductDetailGuard } from './components/products/product-detail/product-detail.guard';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 
@@ -29,7 +30,12 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductsComponent },
-      { path: 'products/:id', component: ProductDetailComponent },
+      {
+        path: 'products/:id',
+        canActivate: [ProductDetailGuard],
+        component: ProductDetailComponent
+
+      },
       { path: 'welcome', component: HomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       // { path: '**', component: PageNotFound }
